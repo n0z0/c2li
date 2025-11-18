@@ -1,2 +1,1 @@
-# cowli
-Command and Control Windows CLI
+# C2li
