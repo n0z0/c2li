@@ -17,8 +17,11 @@ Add-LocalGroupMember -Group "Administrators" -Member Username
 winrm quickconfig
 
 # Perintah 2: Izinkan autentikasi Basic (wajib untuk username/password)
-winrm set winrm/config/service/Auth @{Basic="true"}
+Set-Item -Path 'WSMan:\localhost\Service\Auth\Basic' -Value $true
 
 # Perintah 3: Izinkan koneksi tidak terenkripsi (wajib untuk HTTP)
-winrm set winrm/config/service @{AllowUnencrypted="true"}
+Set-Item -Path 'WSMan:\localhost\Service\AllowUnencrypted' -Value $true
+
+Get-ChildItem WSMan:\localhost\Service\Auth
+Get-Item WSMan:\localhost\Service\AllowUnencrypted
 ```
